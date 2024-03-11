@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useState, Navigate } from "react";
 import { useFormik } from "formik";
-import { signUpSchema } from "./Schema/Schema";
+import { signUpSchema } from "./Schema/Schema.jsx";
 import { Route, Routes } from "react-router-dom";
 import { Context } from "../context/Context";
 
