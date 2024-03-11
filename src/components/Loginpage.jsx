@@ -8,7 +8,7 @@ const Loginpage = () => {
 
     const handleSubmit = async () => {
         try {
-            const response = await fetch('https://hotal-managment-backend.onrender.com/hospital/login', {
+            const response = await fetch('https://hospital-management-system-backend-wjse.onrender.com/hospital/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
