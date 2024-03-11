@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useState, Navigate } from "react";
 import { useFormik } from "formik";
-import { signUpSchema } from "./Schema";
+import { signUpSchema } from "./Schema/Schema";
 import { Route, Routes } from "react-router-dom";
 import { Context } from "../context/Context";
 
@@ -42,7 +42,7 @@ const Signpage = () => {
     validationSchema: signUpSchema,
     onSubmit: async (value, action) => {
       try {
-        const response = await fetch('http://https://hotal-managment-backend.onrender.com/hospital/register', {
+        const response = await fetch('http://localhost:3001/hospital/register', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
