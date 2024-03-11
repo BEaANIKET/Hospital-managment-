@@ -1,4 +1,4 @@
-import * as Yup from 'Yup';
+import * as Yup from 'yup';
 
 export const signUpSchema = Yup.object({
     hospitalname: Yup.string().min(2).max(30).required("Please Enter your name"),
