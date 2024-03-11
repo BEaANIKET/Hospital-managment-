@@ -24,9 +24,6 @@ function Login() {
     let {opa,opa2} = useContext(Context);
 
 
-
-
-
     let color = "rgba(0, 211, 114, 1)";
     return (
         <>
