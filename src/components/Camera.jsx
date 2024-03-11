@@ -36,9 +36,8 @@ const Camera = () => {
             audio={false}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
-            className="vidio"
             disablePictureInPicture='false'
-            className='h-96 rounded-3xl'
+            className=' vidio h-96 rounded-3xl'
           />
         ) : (
           <img className='h-96 rounded-3xl' src={userImage} alt="Captured photo" /> // Ensure userImage is populated correctly
