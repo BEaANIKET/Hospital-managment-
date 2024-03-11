@@ -5,7 +5,7 @@ import profile from '../assets/profile.png'
 import manimg from '../assets/manimg.png'
 import search from '../assets/search.png'
 import icon from '../assets/icon.png'
-import './style.css'
+
 
 
 const HospitalList = () => {
