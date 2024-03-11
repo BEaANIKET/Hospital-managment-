@@ -5,6 +5,7 @@ import profile from '../assets/profile.png'
 import manimg from '../assets/manimg.png'
 import search from '../assets/search.png'
 import icon from '../assets/icon.png'
+import './style1.css'
 
 
 
@@ -14,7 +15,7 @@ const HospitalList = () => {
     useEffect(() => {
         const fetchHospitals = async () => {
             try {
-                const response = await fetch('http://https://hotal-managment-backend.onrender.com/getHospitals/');
+                const response = await fetch('http://hotal-managment-backend.onrender.com/getHospitals/');
                 const data = await response.json();
                 setHospitals(data);
             } catch (error) {
@@ -58,7 +59,7 @@ const HospitalList = () => {
                 </div>
             </div>
             <div className=' w-10/12 h-fit ml-auto mr-auto mt-3 flex flex-col'>
-                <div className=" table grid w-full p-5 rounded-3xl items-center justify-between  bg-emerald-400 text-2xl">
+                <div id='table' className=" grid w-full p-5 rounded-3xl items-center justify-between  bg-emerald-400 text-2xl">
                     <p className='p'>No.</p>
                     <p className='p'>Date & Time</p>
                     <p className='p'>Hospital Name</p>
@@ -75,7 +76,7 @@ const HospitalList = () => {
                   <div className='w-full'>
                   <div className=' text-black flex flex-col text-xl font-bold'>
                     {hospitals.map((hospital, index) => (
-                      <ul key={index} className=' table grid w-full'>
+                      <ul key={index} id='table' className=' grid w-full'>
                         <li className='li'>{index + 1}</li>
                         <li className='li'>{hospital.registrationDate}</li>
                         <li className='li'>{hospital.hospitalName}</li>
