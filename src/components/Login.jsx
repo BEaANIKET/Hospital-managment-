@@ -66,9 +66,9 @@ function Login() {
                         </p>
                     </div>
                     <Routes>
-                        <Route path="/" element={<Signpage />}/>
-                        <Route path="/login" element={<Loginpage />}/>
-                        <Route path="/camera" element={<Camera />}/>
+                        <Route path=":/" element={<Signpage />}/>
+                        <Route path=":/login" element={<Loginpage />}/>
+                        <Route path=":/camera" element={<Camera />}/>
                     </Routes>
                     
                 </div>
