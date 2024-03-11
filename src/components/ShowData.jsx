@@ -14,7 +14,7 @@ const HospitalList = () => {
     useEffect(() => {
         const fetchHospitals = async () => {
             try {
-                const response = await fetch('http://localhost:3001/getHospitals/');
+                const response = await fetch('http://https://hotal-managment-backend.onrender.com/getHospitals/');
                 const data = await response.json();
                 setHospitals(data);
             } catch (error) {
