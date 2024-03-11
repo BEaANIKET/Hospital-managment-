@@ -42,7 +42,7 @@ const Signpage = () => {
     // validationSchema: signUpSchema,
     onSubmit: async (value, action) => {
       try {
-        const response = await fetch('http://localhost:3001/hospital/register', {
+        const response = await fetch('http://hotal-managment-backend.onrender.com/hospital/register', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
