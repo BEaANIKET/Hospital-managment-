@@ -1,0 +1,31 @@
+
+
+.searchbox{
+    width: 350px;
+}
+.heading{
+    font-size: 30px;
+}
+
+.table{
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: .5fr 1fr 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
+}
+.p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+}
+.li{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+}

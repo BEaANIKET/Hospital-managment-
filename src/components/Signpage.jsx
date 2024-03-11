@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import { useState, Navigate } from "react";
 import { useFormik } from "formik";
 import { signUpSchema } from "./Schema";
@@ -35,55 +35,51 @@ const Signpage = () => {
 
   const { setopa, setopa2 } = useContext(Context)
 
-  let { values, errors, touched, handleBlur, handleSubmit, handleChange } = useFormik({
 
+  
+  const { values, errors, touched, handleBlur, handleSubmit, handleChange } = useFormik({
     initialValues: initialValues,
     validationSchema: signUpSchema,
-    onSubmit: async(value, action) => {
-
-      const [formData, setFormData] = useState({
-        hospitalName: value.hospitalname,
-        email: value.email,
-        password: value.password,
-        address: value.address,
-        city: value.city,
-        state: value.state,
-        pincode: value.pincode,
-        phoneNumber: value.phonenumber,
-        registrationNumber: value.HospitalRnumber,
-        emergencyWardNumber: value.wardnumber,
-        registrationCertificate: 'aaa',
-        numberOfAmbulancesAvailable: value.ambulanceNo,
-        registrationDate: value.hospitalRdate
-      })
-
+    onSubmit: async (value, action) => {
       try {
         const response = await fetch('http://localhost:3001/hospital/register', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({
+            hospitalName: value.hospitalname,
+            email: value.email,
+            password: value.password,
+            address: value.address,
+            city: value.city,
+            state: value.state,
+            pincode: value.pincode,
+            phoneNumber: value.phonenumber,
+            registrationNumber: value.HospitalRnumber,
+            emergencyWardNumber: value.wardnumber,
+            registrationCertificate: 'aaa',
+            numberOfAmbulancesAvailable: value.ambulanceNo,
+            registrationDate: value.hospitalRdate
+          }),
         });
+  
         const data = await response.json();
-        console.log("data are here ");
-        console.log(data); // Log the response from the server
+  
+        if (response.ok) {
+          // Registration successful
+          alert("Registration completed ");
+          window.location.href = '/login'
+        } else {
+          // Registration failed
+          const errorMessage = data.error || "An error occurred while registering.";
+          alert(errorMessage);
+        }
       } catch (error) {
-        console.error('Error:', error);
+        console.error('Error Getting in Post Request:', error);
       }
-
-      console.log(value);
-      action.resetForm();
-      alert("registration completed ")
-      window.location.href = '/Login';
-
     }
-
-  })
-
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
-  };
+  });
 
   return (
     <>

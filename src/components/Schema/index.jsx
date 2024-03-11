@@ -6,7 +6,7 @@ export const signUpSchema = Yup.object({
     city: Yup.string().required("A Email is city"),
     state: Yup.string().required("A Email is state"),
     pincode: Yup.number().required("A Email is pincode"),
-    hospitalRdate:  Yup.number().required("A Email is hospital Reg. date"),
+    hospitalRdate:  Yup.string().required("A Email is hospital Reg. date"),
     ambulanceNo:Yup.number().required("A Email is ambulanceNo"),
     email: Yup.string().email().required("An email is required"),
     phonenumber: Yup.string()
@@ -15,8 +15,8 @@ export const signUpSchema = Yup.object({
     .max(10, "A phone number can't be longer than 10 characters")
     .required('A phone number is required'),
     
-    HospitalRnumber: Yup.number().required("A Email is HospitalRnumber"),
+    HospitalRnumber: Yup.string().required("A Email is HospitalRnumber"),
     wardnumber:Yup.number().required("A Email is required"),
-    password: Yup.number().min(6).required("A Email is password"),
-    confirm_password: Yup.number().oneOf([Yup.ref('password') , null , "Pasword must match"]).required(),
+    password: Yup.string().min(6).required("A Email is password"),
+    confirm_password: Yup.string().oneOf([Yup.ref('password') , null , "Pasword must match"]).required(),
 })

@@ -9,6 +9,7 @@ import {
     Router,
     Routes,
     Navigate,
+    Link,
 } from "react-router-dom";
 import Loginpage from "./Loginpage";
 import Signpage from "./Signpage";
@@ -17,9 +18,6 @@ import { Context } from "../context/Context";
 import Camera from "./Camera";
 
 function Login() {
-
-
-
     const [page, setpage] = useState("login");
     let color2 = "rgba(38, 30, 59, 1)";
     
@@ -61,16 +59,16 @@ function Login() {
                         <img className="absolute left-0 h-full" src={headlogo} alt="" />
                         <p className="flex justify-center items-center font-semibold text-black text-4xl">
                             {" "} 
-                            <span style={{ opacity: opa2 }}>Sign Up</span>
+                            <span style={{ opacity: opa2 }}><Link to={'/'}>Sign Up</Link> </span>
                             { }
                             <span className=" opacity-30"> /</span>{" "}
-                            <span style={{ opacity: opa }}> Login </span>
+                            <span className=" cursor-pointer" style={{ opacity: opa }}> <Link to={'/login'}>Login</Link>  </span>
                         </p>
                     </div>
                     <Routes>
-                        <Route path="/Login" element={<Loginpage />} />
-                        <Route path="" element={<Signpage />} />
-                        <Route path="/camera" element={<Camera/>} />
+                        <Route path="/" element={<Signpage />}/>
+                        <Route path="/login" element={<Loginpage />}/>
+                        <Route path="/camera" element={<Camera />}/>
                     </Routes>
                     
                 </div>
