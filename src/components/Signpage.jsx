@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useState, Navigate } from "react";
 import { useFormik } from "formik";
-import { signUpSchema } from "./Schema/Schema.jsx";
+// import { signUpSchema } from "./Schema/Schema.jsx";
 import { Route, Routes } from "react-router-dom";
 import { Context } from "../context/Context";
 
@@ -39,7 +39,7 @@ const Signpage = () => {
   
   const { values, errors, touched, handleBlur, handleSubmit, handleChange } = useFormik({
     initialValues: initialValues,
-    validationSchema: signUpSchema,
+    // validationSchema: signUpSchema,
     onSubmit: async (value, action) => {
       try {
         const response = await fetch('http://localhost:3001/hospital/register', {
